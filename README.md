@@ -29,16 +29,16 @@ A server will connect to the database and via queries, pull data from the databa
 ## ARCHITECTURE MAP
 
 ## PLAN
-1. Write readme
-2. Write skeleton files and folders
--. Write index.html
--. Write all functions (server, router, fetch, handler, queries, build_script, dom)
--. Server testing
--. Script injection protection
--. Db testing
--. Heroku db implementation
--. Travis
--. Mobile first css
+* Write readme
+* Write skeleton files and folders
+* Write index.html
+* Write all functions (server, router, fetch, handler, queries, build_script, dom)
+* Server testing
+* Script injection protection
+* Db testing
+* Heroku db implementation
+* Travis
+* Mobile first css
 
 
 
