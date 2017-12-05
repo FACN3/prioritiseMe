@@ -27,6 +27,12 @@ A server will connect to the database and via queries, pull data from the databa
 
 
 ## ARCHITECTURE MAP
+### Frontend Design
+![alt text](https://user-images.githubusercontent.com/26359601/33603904-d4d5f418-d9bc-11e7-8560-059b2a9648a2.jpeg)
+### Architecture Map
+![alt text](https://user-images.githubusercontent.com/26359601/33603911-da18bc08-d9bc-11e7-9f5d-766948c8580f.jpeg)
+### Schema
+![alt text](https://user-images.githubusercontent.com/26359601/33603919-e223dae0-d9bc-11e7-8be4-c4c6fc49d2eb.png)
 
 ## PLAN
 * Write readme
