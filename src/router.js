@@ -12,7 +12,7 @@ const {
 
 const routes = {
   '/': html,
-  '/style.css': staticfiles,
+  '/main.css': staticfiles,
   '/dom.js': staticfiles,
   '/getData': getData,
   '/postData': postData,
@@ -20,12 +20,14 @@ const routes = {
 };
 
 const router = (req, res) => {
-  const url = urlObject.parse(req.url, true);
-  console.log('url pathname is ', url.pathname);
-  if (routes[url.pathname]) {
-    routes[url.pathname](req, res, url);
+  if (routes[req.url]) {
+    routes[req.url](req, res, req.url);
   } else {
-    handleError(res);
+    const url = urlObject.parse(req.url);
+    if(routes[url.pathname]){
+      routes[url.pathname](req, res);
+    }
+    routes[404](' 404, page not found', res);
   }
 };
 
