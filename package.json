@@ -1,0 +1,24 @@
+{
+  "name": "prioritiseme",
+  "version": "1.0.0",
+  "description": "A To-Do app which implements a database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN3/prioritiseMe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN3/prioritiseMe/issues"
+  },
+  "homepage": "https://github.com/FACN3/prioritiseMe#readme",
+  "dependencies": {
+    "env2": "^2.2.0",
+    "nodemon": "^1.12.4",
+    "pg": "^7.4.0"
+  }
+}
