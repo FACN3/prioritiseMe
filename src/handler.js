@@ -1,14 +1,8 @@
 const urlObject = require('url');
 const fs = require('fs');
 
-// consstaticfiles,
-// '/dom.js': staticfiles,
-// '/getData': getData,
-// '/postData': postData,
-// '404': handleError
-
 const ct = 'Content-Type';
-const html = (req, res) => {
+const html = (req, res, ct) => {
   staticfiles(req, res, 'index.html');
 };
 const staticfiles = (req, res, url) => {
@@ -18,12 +12,12 @@ const staticfiles = (req, res, url) => {
     js: 'application/javascript',
     ico: 'image/x-icon',
     jpeg: 'image/x-icon'
-  }[req.url.split('.')[1]];
-  fs.readFile(`${__dirname}/../public/${url.pathname}`, (err, file) => {
+  }[url.split('.')[1]];
+  fs.readFile(`${__dirname}/../public/${url}`, (err, file) => {
     if (err) {
       handleError(err, res);
     }
-    res.writeHead(200, { ct: extensionType });
+    res.writeHead(200, {'content-type': extensionType });
     res.end(file);
   });
 };
