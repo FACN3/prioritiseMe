@@ -1,0 +1,37 @@
+* {
+  margin: 0em;
+  padding: 0em;
+}
+
+body {
+  color: gainsboro;
+  background-color: mediumblue;
+}
+
+.title {
+  font-size: 1.5em;
+  background-color: Navy;
+}
+
+.title h1 {
+  font-size: 2em;
+  text-align: center;
+}
+
+input {
+  font-size: 1em;
+}
+
+.input-section {
+  margin: 5%;
+  margin-top: 10%;
+}
+
+p {
+  font-size: 1.25em;
+  margin: 5%;
+}
+
+.table-container{
+  font-size: 1.25em;
+}
