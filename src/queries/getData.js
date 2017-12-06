@@ -6,7 +6,7 @@ const getData = cb => {
     (err, res) => {
       if (err) cb(err);
       // const result = res.rows;
-      const {rows: tasks} = res;
+      const { rows: tasks } = res;
       cb(null, tasks);
     }
   );
