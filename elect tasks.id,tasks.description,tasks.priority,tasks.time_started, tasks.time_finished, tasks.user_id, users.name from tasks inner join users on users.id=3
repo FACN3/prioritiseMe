@@ -1,0 +1,66 @@
++------+------------------+------------+---------------------+---------------------+-----------+--------+
+| id   | description      | priority   | time_started        | time_finished       | user_id   | name   |
+|------+------------------+------------+---------------------+---------------------+-----------+--------|
+| 1    | wash the dog     | 1          | 2017-12-16 06:00:00 | 2017-12-16 06:00:00 | 1         | Idan   |
+| 2    | working out      | 2          | 2017-12-16 06:00:00 | 2017-12-16 06:00:00 | 1         | Idan   |
+| 3    | do my homework   | 2          | 2017-12-16 06:00:00 | 2017-12-16 06:00:00 | 2         | Sami   |
+| 4    | play guitar      | 3          | 2017-12-16 06:00:00 | 2017-12-16 06:00:00 | 3         | Neil   |
+| 8    | make more food   | 3          | <null>              | <null>              | 1         | Idan   |
+| 9    | make falafel     | 2          | <null>              | <null>              | 1         | Idan   |
+| 10   | make more food   | 3          | <null>              | <null>              | 1         | Idan   |
+| 11   | make more food   | 3          | <null>              | <null>              | 1         | Idan   |
+| 12   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 13   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 14   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 15   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 16   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 17   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 18   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 19   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 20   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 21   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 22   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 23   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 24   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 25   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 26   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 27   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 28   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 29   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 30   | make food        | 3          | <null>              | <null>              | 1         | Idan   |
+| 31   | coffee           | 43         | <null>              | <null>              | 1         | Idan   |
+| 32   | fgsf             | 3          | <null>              | <null>              | 1         | Idan   |
+| 43   | asd              | 5          | <null>              | <null>              | 3         | Neil   |
+| 46   | asd              | 5          | <null>              | <null>              | 3         | Neil   |
+| 47   | dfgdfg           | 5          | <null>              | <null>              | 3         | Neil   |
+| 48   | asd              | 5          | <null>              | <null>              | 3         | Neil   |
+| 49   | have fun         | 1          | <null>              | <null>              | 3         | Neil   |
+| 50   | des              | 1          | <null>              | <null>              | 3         | Neil   |
+| 51   | asd              | 1          | <null>              | <null>              | 3         | Neil   |
+| 52   | asd              | 1          | <null>              | <null>              | 3         | Neil   |
+| 53   | asd              | 1          | <null>              | <null>              | 3         | Neil   |
+| 54   | test1            | 2          | <null>              | <null>              | 3         | Neil   |
+| 55   | test1            | 2          | <null>              | <null>              | 3         | Neil   |
+| 56   | fun fun fun      | 10         | <null>              | <null>              | 3         | Neil   |
+| 57   | fun fun fun      | 10         | <null>              | <null>              | 3         | Neil   |
+| 58   | asd              | 3          | <null>              | <null>              | 3         | Neil   |
+| 59   | asdddd           | 1          | <null>              | <null>              | 3         | Neil   |
+| 60   | fun fun fun      | 10         | <null>              | <null>              | 3         | Neil   |
+| 61   | asdddd           | 1          | <null>              | <null>              | 3         | Neil   |
+| 62   | fun fun fun      | 10         | <null>              | <null>              | 3         | Neil   |
+| 63   | new              | 1          | <null>              | <null>              | 3         | Neil   |
+| 64   | aaaaa            | 5          | <null>              | <null>              | 3         | Neil   |
+| 65   | dfgdfg           | 3          | <null>              | <null>              | 3         | Neil   |
+| 66   | aaaaaaaaaaaaa    | 1          | <null>              | <null>              | 3         | Neil   |
+| 67   | dddd             | 5          | <null>              | <null>              | 3         | Neil   |
+| 68   | aaaa             | 3          | <null>              | <null>              | 3         | Neil   |
+| 69   | neil is the king | 22         | <null>              | <null>              | 3         | Neil   |
+| 70   | neil is the king | 22         | <null>              | <null>              | 3         | Neil   |
+| 71   | neil neil neil   | 223        | <null>              | <null>              | 3         | Neil   |
+| 72   | fa fa fa         | 223        | <null>              | <null>              | 3         | Neil   |
+| 73   | aaa              | 3          | <null>              | <null>              | 3         | Neil   |
+| 74   | finish this      | 1          | <null>              | <null>              | 3         | Neil   |
+| 75   | asdfsdf          | 1          | <null>              | <null>              | 3         | Neil   |
+| 76   | asdfsdf          | 4          | <null>              | <null>              | 3         | Neil   |
++------+------------------+------------+---------------------+---------------------+-----------+--------+
+SELECT 61
