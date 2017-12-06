@@ -51,7 +51,7 @@ table {
   border-collapse: collapse;
   width: 90%;
   margin-left: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 3em;
 }
 
 table td, table th {
@@ -65,6 +65,7 @@ table tr:nth-child(even) {
 
 table tr:hover {
   background-color: midnightblue;
+  transition-duration: 0.4s;
 }
 
 table th {
@@ -73,4 +74,47 @@ table th {
   text-align: left;
   background-color: Navy;
   color: white;
+}
+
+.swing:hover
+{
+        -webkit-animation: swing 1s ease;
+        animation: swing 1s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        transition-delay: 1s;
+}
+
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
 }
