@@ -35,9 +35,7 @@ function domUsers(err, res) {
   }
   var users = res.reduce(function(acc, i) {
     var newArr = [];
-    return acc.includes(i.user_id)
-      ? acc
-      : acc.concat({ id: i.user_id, name: i.name });
+    return acc.i.user_id ? acc : acc.concat({ id: i.user_id, name: i.name });
   }, []);
   var dropdown = document.querySelector('select');
   dropdown.textContent = '';

@@ -1,6 +1,9 @@
 const urlObject = require('url');
 const fs = require('fs');
-const { getDataDb, getDataAllDb } = require('./queries/getData');
+const {
+  getData: getDataDb,
+  getDataAll: getDataAllDb
+} = require('./queries/getData');
 const postDataDb = require('./queries/postData');
 
 // const ct = 'Content-Type';
