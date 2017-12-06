@@ -27,7 +27,7 @@ const staticfiles = (req, res, url) => {
 const handleError = (err, res) => {
   console.log('error with ', err);
   res.writeHead(404, { 'Content-Type': 'text/html' });
-  res.end('an error has occured, sorry :(');
+  res.end('an error has occured in handler, sorry :(');
 };
 const getData = (req, res) => {
   getDataDb((err, result) => {
@@ -37,6 +37,7 @@ const getData = (req, res) => {
   });
 };
 const postData = (req, res, url) => {
+  // console.log('postdata urlobject is ', url);
   postDataDb(url.query, (err, result) => {
     if (err) handleError(err, res);
     res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -44,4 +45,4 @@ const postData = (req, res, url) => {
   });
 };
 
-module.exports = { html, staticfiles, handleError };
+module.exports = { html, staticfiles, handleError, postData, getData };

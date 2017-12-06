@@ -11,6 +11,12 @@ function fetch(url, callback) {
   xhr.open('GET', url);
   xhr.send();
 }
+function addtoDom(err, res) {
+  if (err) {
+    console.log('error with ', err);
+  }
+  //dom manip
+}
 
 document.querySelector('.form').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -24,10 +30,3 @@ document.querySelector('.form').addEventListener('submit', function(e) {
     addtoDom
   );
 });
-
-function addtoDom(err, res) {
-  if (err) {
-    console.log('error with ', err);
-  }
-  //dom manip
-}
