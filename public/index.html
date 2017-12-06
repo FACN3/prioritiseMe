@@ -11,10 +11,11 @@
   <h1>Prioritise Me!</h1>
 </div>
 <p>Add information in the following boxes and let the magic happens!</p>
-  <form class="form" action="/create-user" method="post">
+  <form class="form" >
     <div class="input-section">
-      <input type="text" name="description" value="" placeholder="description">
-      <input type="text" name="priority" value="" placeholder="priority">
+      <input type="text" id="description" name="description" value="" placeholder="description" required>
+      <input type="text" id="priority" name="priority" value="" placeholder="priority" required>
+      <input type="submit" name="submit">
     </div>
   </form>
   <div class="table-container">
@@ -24,4 +25,5 @@
     </table>
   </div>
 </body>
+<script src="./dom.js"></script>
 </html>
