@@ -33,7 +33,7 @@ const getData = (req, res) => {
   getDataDb((err, result) => {
     if (err) handleError(err, res);
     res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(result);
+    res.end(JSON.stringify(result));
   });
 };
 const postData = (req, res, url) => {

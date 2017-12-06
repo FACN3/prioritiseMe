@@ -10,10 +10,13 @@ const {
   handleError
 } = require('./handler');
 
-const routes = {
+const routeStaticfiles = {
   '/': html,
   '/main.css': staticfiles,
   '/dom.js': staticfiles,
+  '404': handleError
+};
+const routeDataHandler = {
   '/getData': getData,
   '/postData': postData,
   '404': handleError
@@ -21,14 +24,14 @@ const routes = {
 
 const router = (req, res) => {
   console.log(req.url);
-  if (routes[req.url]) {
-    routes[req.url](req, res, req.url);
+  if (routeStaticfiles[req.url]) {
+    routeStaticfiles[req.url](req, res, req.url);
   } else {
     const url = urlObject.parse(req.url, true);
-    if (routes[url.pathname]) {
-      routes[url.pathname](req, res, url);
+    if (routeDataHandler[url.pathname]) {
+      routeDataHandler[url.pathname](req, res, url);
     } else {
-      routes[404](' 404, page not found', res);
+      routeDataHandler[404](' 404, page not found', res);
     }
   }
 };
