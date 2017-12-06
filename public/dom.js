@@ -1,3 +1,12 @@
+function dom(err, res) {
+  domUsers(err, res);
+  domTable(err, res);
+}
+
+(function init() {
+  fetch('/getData', dom);
+})();
+
 function fetch(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -11,11 +20,18 @@ function fetch(url, callback) {
   xhr.open('GET', url);
   xhr.send();
 }
-function addtoDom(err, res) {
+function domUsers(err, res) {
+  if (err) {
+    console.log('domUsers error with ', err);
+  }
+  // res.reduce(function(acc, i) {});
+  // res.forEach(function(e) {});
+}
+function domTable(err, res) {
   if (err) {
     console.log('error with ', err);
   }
-  //dom manip
+  console.log(res);
 }
 
 document.querySelector('.form').addEventListener('submit', function(e) {
@@ -27,6 +43,6 @@ document.querySelector('.form').addEventListener('submit', function(e) {
   }
   fetch(
     '/postData?description=' + description + '&priority=' + priority,
-    addtoDom
+    domInit
   );
 });
