@@ -41,7 +41,37 @@ function domTable(err, res) {
   if (err) {
     console.log('error with ', err);
   }
-  //dom manip
+  res.forEach(function(item) {
+    var trDescription, trPriority, trFinished, trStarted, trName;
+    var table = document.getElementById('table');
+    var tr = document.createElement('tr');
+    trDescription = document.createElement('th');
+    trPriority = document.createElement('th');
+    trFinished = document.createElement('th');
+    trStarted = document.createElement('th');
+    trName = document.createElement('th');
+    if (item.description) {
+      trDescription.textContent = item.description;
+    }
+    if (item.priority) {
+      trPriority.textContent = item.priority;
+    }
+    if (item.time_finished) {
+      trFinished.textContent = item.time_finished;
+    }
+    if (item.time_started) {
+      trStarted.textContent = item.time_started;
+    }
+    if (item.name) {
+      trName.textContent = item.name;
+    }
+    tr.appendChild(trDescription);
+    tr.appendChild(trPriority);
+    tr.appendChild(trFinished);
+    tr.appendChild(trStarted);
+    tr.appendChild(trName);
+    table.appendChild(tr);
+  });
 }
 
 document.querySelector('.form').addEventListener('submit', function(e) {
