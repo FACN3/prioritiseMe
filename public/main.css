@@ -20,7 +20,6 @@ body {
 }
 
 input {
-
   font-size: 1.375em;
   margin-bottom: 5%;
 }
@@ -30,10 +29,9 @@ input {
   margin-top: 10%;
 }
 
-.div-input{
+.div-input {
   display: flex;
   justify-content: space-between;
-
 }
 
 p {
@@ -41,34 +39,38 @@ p {
   margin: 5%;
 }
 
-label{
+label {
   font-size: 1.375em;
 }
 
-.table-container{
+.table-container {
   font-size: 1.375em;
 }
 
 table {
-    border-collapse: collapse;
-    width: 90%;
-    margin-left: 5%;
-    margin-bottom: 5%;
+  border-collapse: collapse;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 5%;
 }
 
 table td, table th {
-    border: 0.0625em solid #ddd;
-    padding: 8px;
+  border: 0.0625em solid #ddd;
+  padding: 0.5em;
 }
 
-table tr:nth-child(even){background-color: blue;}
+table tr:nth-child(even) {
+  background-color: blue;
+}
 
-table tr:hover {background-color: midnightblue;}
+table tr:hover {
+  background-color: midnightblue;
+}
 
 table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: Navy;
-    color: white;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  text-align: left;
+  background-color: Navy;
+  color: white;
 }
