@@ -1,12 +1,11 @@
-function dom(err, res) {
-  domUsers(err, res);
-  domTable(err, res);
-}
-
 (function init() {
   fetch('/getData', dom);
 })();
 
+function dom(err, res) {
+  domUsers(err, res);
+  domTable(err, res);
+}
 function fetch(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -21,17 +20,28 @@ function fetch(url, callback) {
   xhr.send();
 }
 function domUsers(err, res) {
+  // console.log('domUsers res is ', res);
   if (err) {
     console.log('domUsers error with ', err);
   }
-  // res.reduce(function(acc, i) {});
-  // res.forEach(function(e) {});
+  var users = res.reduce(function(acc, i) {
+    return acc.includes(i.name) ? acc : acc.concat(i.name);
+  }, []);
+  var dropdown = document.querySelector('select');
+  dropdown.textContent = '';
+  users.forEach(function(e) {
+    // console.log('users is', users);
+    var option = document.createElement('option');
+    option.setAttribute('value', e);
+    option.textContent = e;
+    dropdown.appendChild(option);
+  });
 }
 function domTable(err, res) {
   if (err) {
     console.log('error with ', err);
   }
-  console.log(res);
+  //dom manip
 }
 
 document.querySelector('.form').addEventListener('submit', function(e) {
