@@ -6,6 +6,7 @@ const {
   html,
   staticfiles,
   getData,
+  getDataAll,
   postData,
   handleError
 } = require('./handler');
@@ -15,6 +16,7 @@ const routes = {
   '/main.css': staticfiles,
   '/dom.js': staticfiles,
   '/getData': getData,
+  '/getDataAll': getDataAll,
   '/postData': postData,
   '404': handleError
 };

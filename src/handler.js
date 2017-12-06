@@ -1,6 +1,9 @@
 const urlObject = require('url');
 const fs = require('fs');
-const getDataDb = require('./queries/getData');
+const {
+  getData: getDataDb,
+  getDataAll: getDataAllDb
+} = require('./queries/getData');
 const postDataDb = require('./queries/postData');
 
 // const ct = 'Content-Type';
@@ -29,8 +32,15 @@ const handleError = (err, res) => {
   res.writeHead(404, { 'Content-Type': 'text/html' });
   res.end('an error has occured in handler, sorry :(');
 };
-const getData = (req, res) => {
-  getDataDb((err, result) => {
+const getData = (req, res, url) => {
+  getDataDb(url.query, (err, result) => {
+    if (err) handleError(err, res);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(result));
+  });
+};
+const getDataAll = (req, res, url) => {
+  getDataAllDb(url.query, (err, result) => {
     if (err) handleError(err, res);
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(result));
@@ -46,4 +56,11 @@ const postData = (req, res, url) => {
   });
 };
 
-module.exports = { html, staticfiles, handleError, postData, getData };
+module.exports = {
+  html,
+  staticfiles,
+  handleError,
+  postData,
+  getData,
+  getDataAll
+};
