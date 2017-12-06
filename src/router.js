@@ -20,14 +20,16 @@ const routes = {
 };
 
 const router = (req, res) => {
+  console.log(req.url);
   if (routes[req.url]) {
     routes[req.url](req, res, req.url);
   } else {
     const url = urlObject.parse(req.url, true);
     if (routes[url.pathname]) {
       routes[url.pathname](req, res, url);
+    } else {
+      routes[404](' 404, page not found', res);
     }
-    routes[404](' 404, page not found', res);
   }
 };
 
