@@ -23,9 +23,9 @@ const router = (req, res) => {
   if (routes[req.url]) {
     routes[req.url](req, res, req.url);
   } else {
-    const url = urlObject.parse(req.url);
+    const url = urlObject.parse(req.url, true);
     if (routes[url.pathname]) {
-      routes[url.pathname](req, res);
+      routes[url.pathname](req, res, url);
     }
     routes[404](' 404, page not found', res);
   }
