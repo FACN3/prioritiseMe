@@ -37,10 +37,11 @@ const getData = (req, res) => {
   });
 };
 const postData = (req, res, url) => {
+  console.log('in postData handler.');
   // console.log('postdata urlobject is ', url);
   postDataDb(url.query, (err, result) => {
     if (err) handleError(err, res);
-    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.writeHead(200, { 'Content-Type': 'application/javascript' });
     res.end(result);
   });
 };

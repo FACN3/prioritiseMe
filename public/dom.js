@@ -3,8 +3,17 @@
 })();
 
 function dom(err, res) {
-  domUsers(err, res);
-  domTable(err, res);
+  if (res.length != null && res.length > 0) {
+    domUsers(err, res);
+    domTable(err, res);
+  } else if (res.success) {
+    fetch('/getData', function(err, res) {
+      domUsers(err, res);
+      domTable(err, res);
+    });
+  } else {
+    //handle error
+  }
 }
 function fetch(url, callback) {
   var xhr = new XMLHttpRequest();
@@ -45,11 +54,11 @@ function domTable(err, res) {
     var trDescription, trPriority, trFinished, trStarted, trName;
     var table = document.getElementById('table');
     var tr = document.createElement('tr');
-    trDescription = document.createElement('th');
-    trPriority = document.createElement('th');
-    trFinished = document.createElement('th');
-    trStarted = document.createElement('th');
-    trName = document.createElement('th');
+    trDescription = document.createElement('td');
+    trPriority = document.createElement('td');
+    trFinished = document.createElement('td');
+    trStarted = document.createElement('td');
+    trName = document.createElement('td');
     if (item.description) {
       trDescription.textContent = item.description;
     }
@@ -73,6 +82,9 @@ function domTable(err, res) {
     table.appendChild(tr);
   });
 }
+document.querySelector('#users').addEventListener('change', function(e) {
+  e.preventDefault();
+});
 
 document.querySelector('.form').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -82,7 +94,12 @@ document.querySelector('.form').addEventListener('submit', function(e) {
     alert('Please enter both fields correctly');
   }
   fetch(
-    '/postData?description=' + description + '&priority=' + priority,
-    domInit
+    '/postData?description=' +
+      description +
+      '&priority=' +
+      priority +
+      '&user=' +
+      user,
+    dom
   );
 });
