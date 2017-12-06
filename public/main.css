@@ -11,6 +11,7 @@ body {
 .title {
   font-size: 1.5em;
   background-color: Navy;
+  width: 100%;
 }
 
 .title h1 {
@@ -19,7 +20,9 @@ body {
 }
 
 input {
-  font-size: 1em;
+
+  font-size: 1.375em;
+  margin-bottom: 5%;
 }
 
 .input-section {
@@ -27,11 +30,45 @@ input {
   margin-top: 10%;
 }
 
+.div-input{
+  display: flex;
+  justify-content: space-between;
+
+}
+
 p {
-  font-size: 1.25em;
+  font-size: 1.375em;
   margin: 5%;
 }
 
+label{
+  font-size: 1.375em;
+}
+
 .table-container{
-  font-size: 1.25em;
+  font-size: 1.375em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+table td, table th {
+    border: 0.0625em solid #ddd;
+    padding: 8px;
+}
+
+table tr:nth-child(even){background-color: blue;}
+
+table tr:hover {background-color: midnightblue;}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: Navy;
+    color: white;
 }

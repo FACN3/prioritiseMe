@@ -1,27 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="main.css">
-  <title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="main.css">
+  <title>Prioritise Me!</title>
 </head>
+
 <body>
-<div class="title">
-  <h1>Prioritise Me!</h1>
-</div>
-<p>Add information in the following boxes and let the magic happens!</p>
+  <div class="title">
+    <h1>Prioritise Me!</h1>
+  </div>
+  <p>Add information in the following boxes and let the magic happens!</p>
   <form class="form" action="/create-user" method="post">
     <div class="input-section">
-      <input type="text" name="description" value="" placeholder="description">
-      <input type="text" name="priority" value="" placeholder="priority">
+
+      <div class="div-input">
+        <label for="description">Description:</label><input label="description" type="text" name="description" value="" placeholder="Description">
+      </div>
+      <div class="div-input">
+        <label for="priority">Priority:</label><input label="priority" type="text" name="priority" value="" placeholder="Priority">
+      </div>
+
     </div>
   </form>
   <div class="table-container">
     <table id="">
-      <tr>Description</tr>
-      <tr>Priority</tr>
+      <tr>
+        <th>Description</th>
+        <th>Priority</th>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>Priority</td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>Priority</td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>Priority</td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>Priority</td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>Priority</td>
+      </tr>
+
     </table>
   </div>
 </body>
+
 </html>
