@@ -6,7 +6,7 @@ const getData = (query, cb) => {
     [query.user],
     (err, res) => {
       if (err) cb(err);
-      const { rows: tasks } = res;
+      const tasks = res.rows;
       cb(null, tasks);
     }
   );
