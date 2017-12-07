@@ -2,13 +2,20 @@
   fetch('/getDataAll', dom);
 })();
 
+function getUserIdFromSelect() {
+  // var targetIdex = e.currentTarget.selectedIndex;
+  // return e.currentTarget.options[targetIdex].id;
+}
+
 function dom(err, res) {
-  if (res.length != null && res.length > 0) {
+  if (
+    (res.data != null && res.data.length != null && res.data.length > 0) ||
+    (res.users != null && res.users.length != null && res.users.length > 0)
+  ) {
     domUsers(err, res);
     domTable(err, res);
   } else if (res.success) {
-    fetch('/getData', function(err, res) {
-      domUsers(err, res);
+    fetch('/getData?user=' + getUserIdFromSelect(), function(err, res) {
       domTable(err, res);
     });
   } else {
@@ -21,22 +28,17 @@ function fetch(url, callback) {
     if (xhr.readyState == 4 && xhr.status !== 200) {
       callback(xhr.responseText);
     } else if (xhr.readyState == 4 && xhr.status === 200) {
-      console.log(callback(null, JSON.parse(xhr.responseText)));
       callback(null, JSON.parse(xhr.responseText));
     }
   };
   xhr.open('GET', url);
   xhr.send();
 }
-function domUsers(err, res) {
-  // console.log('domUsers res is ', res);
+function domUsers(err, { users }) {
   if (err) {
     console.log('domUsers error with ', err);
   }
-  var users = res.reduce(function(acc, i) {
-    var newArr = [];
-    return acc.i.user_id ? acc : acc.concat({ id: i.user_id, name: i.name });
-  }, []);
+
   var dropdown = document.querySelector('select');
   dropdown.textContent = '';
   var option = document.createElement('option');
@@ -44,7 +46,6 @@ function domUsers(err, res) {
   option.setAttribute('value', 'ALL');
   dropdown.appendChild(option);
   users.forEach(function(e) {
-    // console.log('users is', users);
     var option = document.createElement('option');
     option.setAttribute('value', e.name);
     option.setAttribute('id', e.id);
@@ -52,14 +53,20 @@ function domUsers(err, res) {
     dropdown.appendChild(option);
   });
 }
-function domTable(err, res) {
+
+function domTable(err, { data }) {
   if (err) {
     console.log('error with ', err);
   }
-  res.forEach(function(item) {
+
+  var table = document.getElementById('table');
+  while (table.childNodes.length > 2) {
+    table.removeChild(table.lastChild);
+  }
+  data.forEach(function(item) {
     var trDescription, trPriority, trFinished, trStarted, trName;
-    var table = document.getElementById('table');
     var tr = document.createElement('tr');
+    tr.setAttribute('class', 'table-item');
     trDescription = document.createElement('td');
     trPriority = document.createElement('td');
     trFinished = document.createElement('td');
@@ -90,8 +97,7 @@ function domTable(err, res) {
 }
 document.querySelector('#users').addEventListener('change', function(e) {
   e.preventDefault();
-  var user_id = document.querySelector('#users').id;
-  fetch('/getData?user=' + user_id, dom);
+  fetch('/getData?user=' + getUserIdFromSelect(), domTable);
 });
 
 document.querySelector('.form').addEventListener('submit', function(e) {
