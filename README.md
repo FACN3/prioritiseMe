@@ -11,7 +11,7 @@ Prioritise Me is a To-Do app which implements a database.
 
 ```npm run dev```
 
-3) The site should reply with a link and a message that it has opened on port 5000.
+3) The site should reply with a link and a message that it has opened on port 3000.
 
 4) Enjoy!
 
