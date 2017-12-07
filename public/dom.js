@@ -3,8 +3,9 @@
 })();
 
 function getUserIdFromSelect() {
-  // var targetIdex = e.currentTarget.selectedIndex;
-  // return e.currentTarget.options[targetIdex].id;
+  var targetIndex = document.getElementById('users').options.selectedIndex;
+  var result = document.getElementById('users')[targetIndex].id;
+  return result;
 }
 
 function dom(err, res) {
@@ -15,6 +16,7 @@ function dom(err, res) {
     domUsers(err, res);
     domTable(err, res);
   } else if (res.success) {
+    console.log('hi');
     fetch('/getData?user=' + getUserIdFromSelect(), function(err, res) {
       domTable(err, res);
     });
@@ -36,7 +38,6 @@ function fetch(url, callback) {
 }
 
 function domUsers(err, { users }) {
-
   if (err) {
     console.log('domUsers error with ', err);
   }
@@ -99,7 +100,11 @@ function domTable(err, { data }) {
 }
 document.querySelector('#users').addEventListener('change', function(e) {
   e.preventDefault();
-  fetch('/getData?user=' + getUserIdFromSelect(), domTable);
+  if (document.querySelector('#users').selectedIndex == 0) {
+    fetch('/getDataAll', domTable);
+  } else {
+    fetch('/getData?user=' + getUserIdFromSelect(), domTable);
+  }
 });
 
 document.querySelector('.form').addEventListener('submit', function(e) {
@@ -109,14 +114,17 @@ document.querySelector('.form').addEventListener('submit', function(e) {
   var priority = document.querySelector('#priority').value;
   if (!description || !priority) {
     alert('Please enter both fields correctly');
+  } else if (document.querySelector('#users').selectedIndex == 0) {
+    alert('Please select a user');
+  } else {
+    fetch(
+      '/postData?description=' +
+        description +
+        '&priority=' +
+        priority +
+        '&user=' +
+        getUserIdFromSelect(),
+      dom
+    );
   }
-  fetch(
-    '/postData?description=' +
-      description +
-      '&priority=' +
-      priority +
-      '&user=' +
-      user,
-    dom
-  );
 });
