@@ -34,7 +34,9 @@ function fetch(url, callback) {
   xhr.open('GET', url);
   xhr.send();
 }
+
 function domUsers(err, { users }) {
+
   if (err) {
     console.log('domUsers error with ', err);
   }

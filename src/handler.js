@@ -7,7 +7,6 @@ const {
 } = require('./queries/getData');
 const postDataDb = require('./queries/postData');
 
-// const ct = 'Content-Type';
 const html = (req, res, ct) => {
   staticfiles(req, res, 'index.html');
 };
@@ -29,7 +28,6 @@ const staticfiles = (req, res, url) => {
 };
 
 const handleError = (err, res) => {
-  console.log('error with ', err);
   res.writeHead(404, { 'Content-Type': 'text/html' });
   res.end('an error has occured in handler, sorry :(');
 };
