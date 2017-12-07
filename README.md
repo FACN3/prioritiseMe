@@ -1,7 +1,7 @@
 # prioritiseMe
 Prioritise Me is a To-Do app which implements a database.
 
-##How to use the site:
+## How to use the site:
 
 1) Clone the repository:
 
