@@ -23,4 +23,12 @@ const getDataAll = (query, cb) => {
   );
 };
 
-module.exports = { getData, getDataAll };
+const getUsers = cb => {
+  connect.query('Select * From users', (err, res) => {
+    if (err) cb(err);
+    const { rows: users } = res;
+    cb(null, users);
+  });
+};
+
+module.exports = { getData, getDataAll, getUsers };

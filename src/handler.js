@@ -2,7 +2,8 @@ const urlObject = require('url');
 const fs = require('fs');
 const {
   getData: getDataDb,
-  getDataAll: getDataAllDb
+  getDataAll: getDataAllDb,
+  getUsers: getUsersDb
 } = require('./queries/getData');
 const postDataDb = require('./queries/postData');
 
@@ -31,17 +32,23 @@ const handleError = (err, res) => {
   res.end('an error has occured in handler, sorry :(');
 };
 const getData = (req, res, url) => {
-  getDataDb(url.query, (err, result) => {
+  getDataDb(url.query, (err, data) => {
     if (err) handleError(err, res);
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(result));
+    getUsersDb((err, users) => {
+      const result = { users: users, data: data };
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(result));
+    });
   });
 };
 const getDataAll = (req, res, url) => {
-  getDataAllDb(url.query, (err, result) => {
+  getDataAllDb(url.query, (err, data) => {
     if (err) handleError(err, res);
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(result));
+    getUsersDb((err, users) => {
+      const result = { users: users, data: data };
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(result));
+    });
   });
 };
 const postData = (req, res, url) => {
