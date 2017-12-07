@@ -6,7 +6,6 @@ const getData = (query, cb) => {
     [query.user],
     (err, res) => {
       if (err) cb(err);
-      // const result = res.rows;
       const { rows: tasks } = res;
       cb(null, tasks);
     }
@@ -18,11 +17,18 @@ const getDataAll = (query, cb) => {
     'select tasks.id,tasks.description,tasks.priority,tasks.time_started, tasks.time_finished, tasks.user_id, users.name from tasks inner join users on users.id=tasks.user_id',
     (err, res) => {
       if (err) cb(err);
-      // const result = res.rows;
       const { rows: tasks } = res;
       cb(null, tasks);
     }
   );
 };
 
-module.exports = { getData, getDataAll };
+const getUsers = cb => {
+  connect.query('Select * From users', (err, res) => {
+    if (err) cb(err);
+    const { rows: users } = res;
+    cb(null, users);
+  });
+};
+
+module.exports = { getData, getDataAll, getUsers };
