@@ -1,6 +1,20 @@
 # prioritiseMe
 Prioritise Me is a To-Do app which implements a database.
 
+##How to use the site:
+
+1) Clone the repository:
+
+```git clone https://github.com/FACN3/prioritiseMe.git```
+
+2) To open the site type inside the directory of the cloned repository:
+
+```npm run dev```
+
+3) The site should reply with a link and a message that it has opened on port 5000.
+
+4) Enjoy!
+
 ## WHO
 Sami
 
