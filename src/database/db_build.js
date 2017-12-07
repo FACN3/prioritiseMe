@@ -8,6 +8,5 @@ connect.query(buildScript, (err, res) => {
     console.log(err);
     throw err;
   }
-  console.log('database build in DA HOUSE!');
   connect.end(); //ending because this is run once to build table, this is not a server side script that is accessing the database many times
 });

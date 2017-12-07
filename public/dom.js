@@ -29,7 +29,6 @@ function fetch(url, callback) {
   xhr.send();
 }
 function domUsers(err, res) {
-  // console.log('domUsers res is ', res);
   if (err) {
     console.log('domUsers error with ', err);
   }
@@ -44,7 +43,6 @@ function domUsers(err, res) {
   option.setAttribute('value', 'ALL');
   dropdown.appendChild(option);
   users.forEach(function(e) {
-    // console.log('users is', users);
     var option = document.createElement('option');
     option.setAttribute('value', e.name);
     option.setAttribute('id', e.id);
